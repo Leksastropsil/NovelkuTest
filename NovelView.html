@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokidoki Bosotto Roshiago de Dereru Tonari no Alya-san</title>
+    <link rel="stylesheet" href="css/NovelView.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+</head>
+<body>
+    <img class="background-image" src="image/Roshidere.jpg" alt="Background Image">
+    
+    <div class="gradient-container">
+        <div class="backNav">
+            <a href="Home.html">
+                <i class="fas fa-chevron-left" style="height: 30px; width: 30px; color:white ;"></i>
+            </a>
+        </div>
+        
+        <div class="contentTitle">
+            <h1>Tokidoki Bosotto Roshiago de Dereru Tonari no Alya-san</h1>
+            <p>SunSunSun / Momoco</p>
+        </div>
+    </div>
+    
+    <section class="card-column">
+        <nav>
+            <div class="vol-nav nav-items">
+                <a href="#" class="nav-link nav-active active">Volume</a>
+                <a href="#" class="nav-comment nav-active" id="showComment">Komentar</a>
+                <a href="#" class="nav-link nav-active">Detail</a>
+            </div>
+        </nav>
+        
+        <div class="content-container">
+            <div class="content active content-one">
+                <!-- Repeated Chapter Card - Consolidated for brevity -->
+                <div class="chapter-card" onclick="window.location.href='ChapterView.html'">
+                    <div class="chapter-thumbnail">
+                        <img src="image/Roshidere.jpg" alt="Chapter Thumbnail" height="200" width="150">
+                        <div class="chapter-number">Volume 1</div>
+                    </div>
+                    <div class="chapter-content">
+                        <div class="chapter-title">Tokidoki Bosotto Roshiago de Dereru Tonari no Alya-san Vol. 1</div>
+                        <div class="chapter-stats">
+                            <div class="chapter-stat heart-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                                1.2K
+                            </div>
+                            <div class="chapter-stat comment-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+                                </svg>
+                                24
+                            </div>
+                            <div class="chapter-stat view-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" />
+                                </svg>
+                                5.6K
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- More Chapter Cards would be identical -->
+            </div>
+            
+            <div class="content content-three" style="padding: 5px;">
+                <span class="detail-head">Sinopsis: </span>
+                <br>
+                <p>Alisa Mikhailovna Kujo, yang bersekolah di sekolah swasta, Akademi Seirei, adalah gadis SMA dengan rambut perak yang terlihat sangat cantik sehingga siapa pun bisa berbalik jika dia berjalan. Karakter utama, Masachika Kuze, yang duduk di sebelah Alisa, adalah siswa yang tidak bersemangat yang hanya tidur di sekolah, dan dia selalu mengeluh. Untuk beberapa alasan, Alisa terkadang berbicara dalam bahasa Rusia. Namun, Alisa tidak tahu bahwa Masachika bisa mengerti bahasa Rusia layaknya penutur asli.</p>
+            </div>
+        </div>
+    </section>
+
+<section class="comment-section" id="showscreen" style="">
+    <div class="nav">
+        <button id="back-button">
+              <i class="fas fa-chevron-left" style="height: 30px; width: 30px;"></i></button>
+    </div>
+    <div id="disqus_thread"></div>
+</section>
+    
+    <script src="js/VolumeView.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    // Menghubungkan tombol dan elemen target
+    const backButton = document.getElementById("back-button");
+    const showButton = document.getElementById("showComment");
+    const commentSection = document.getElementById("showscreen");
+    
+    // Event Listener untuk tombol "Back"
+    backButton.addEventListener("click", function () {
+        commentSection.style.display = "none"; // Sembunyikan komentar
+    });
+    
+    showButton.addEventListener("click", function () {
+        commentSection.style.display = "block"; // Sembunyikan komentar
+        commentSection.style.position = "fixed"; // Sembunyikan komentar
+    });
+
+    // Disqus Configuration
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://lefoursaa.disqus.com/embed.js'; // URL embed Disqus Anda
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+});
+    </script>
+</body>
+</html>
